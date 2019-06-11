@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+<link rel="stylesheet" href="../vendor/bootstrap.min.css">
+<script src="../vendor/angular.min.js"></script>
+
+<link rel="stylesheet" href="app.css">
+<script src="app.js"></script>
+</head>
+
+<body ng-app="springbox" ng-controller="MainController as $ctrl">
+	<div class="page-container">
+		<div style="flex: 1;"></div>
+		<div style="flex: 2;">
+			<div class="jumbotron">
+				<h1 class="display-4">Jasypt Encryption Utility!</h1>
+				<p class="lead">This is a simple hero unit, a simple
+					jumbotron-style component for calling extra attention to featured
+					content or information.</p>
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<span class="input-group-text" id="basic-addon1">Pass</span>
+					</div>
+					<input type="text" class="form-control" placeholder="Password"
+						ng-model="$ctrl.password"
+						aria-label="Username" aria-describedby="basic-addon1">
+				</div>
+				<hr class="my-4">
+				<h2 class="display-4">Encrypt:</h2>
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<span class="input-group-text" id="basic-addon1">Value</span>
+					</div>
+					<input type="text" class="form-control" placeholder="Value"
+						ng-model="$ctrl.valToEncrypt"
+						aria-label="Username" aria-describedby="basic-addon1">
+				</div>
+				<div class="alert alert-danger" role="alert"
+					ng-if="$ctrl.encError">
+				  {{$ctrl.encError}}
+				</div>
+				<div style="display:flex;">
+					<div style="flex:1">
+						<button type="button" class="btn btn-primary"
+							ng-click="$ctrl.encrypt();">Encrypt!</button>
+					</div>
+					<span class="output-display">{{$ctrl.valEncrypted}}</span>
+				</div>
+				<hr class="my-4">
+				<h2 class="display-4">Decrypt:</h2>
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<span class="input-group-text" id="basic-addon1">Value</span>
+					</div>
+					<input type="text" class="form-control" placeholder="Value"
+						ng-model="$ctrl.valToDecrypt"
+						aria-label="Username" aria-describedby="basic-addon1">
+				</div>
+				<div style="display:flex;">
+					<div style="flex:1">
+						<button type="button" class="btn btn-primary"
+							ng-click="$ctrl.decrypt();">Decrypt!</button>
+					</div>
+					<span class="output-display">{{$ctrl.valDecrypted}}</span>
+				</div>
+			</div>
+		</div>
+		<div style="flex: 1;"></div>
+	</div>
+</body>
+
+</html>
